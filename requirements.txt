@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+databases
+asyncpg           # or aiosqlite, depending on your DB
+python-dotenv     # optional, for env file support
