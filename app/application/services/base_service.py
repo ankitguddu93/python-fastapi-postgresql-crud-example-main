@@ -8,7 +8,10 @@ class BaseService:
 
     async def get_all(self):
         return await self.repo.get_all()
-
+    
+    async def get_by_filter(self, data: dict):
+        return await self.repo.get_by_filter(data)
+    
     async def get_by_id(self, entity_id: int):
         return await self.repo.get_by_id(entity_id)
 

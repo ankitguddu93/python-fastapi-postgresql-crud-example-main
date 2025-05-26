@@ -14,6 +14,11 @@ class BaseController:
         async def get_all(db: AsyncSession = Depends(get_db)):
             service = self.service_class(db)
             return await service.get_all()
+        
+        @self.router.post("/filter")
+        async def get_by_filter(data: dict, db: AsyncSession = Depends(get_db)):
+            service = self.service_class(db)
+            return await service.get_by_filter(data)
 
         @self.router.get("/{item_id}")
         async def get_by_id(item_id: int, db: AsyncSession = Depends(get_db)):
