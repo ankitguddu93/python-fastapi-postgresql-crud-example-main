@@ -30,3 +30,5 @@ class BaseRepository:
         obj = self.model(**data)
         self.session.add(obj)
         await self.session.commit()
+        await self.session.refresh(obj)
+        return obj
